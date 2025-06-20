@@ -1,11 +1,15 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-typedef struct s_stack
-{
-	int	*stack_a;
-	int	*stack_b;
-	int	size;
-}	t_stack;
+#include <stdbool.h>
+#include <stdlib.h>
 
+typedef struct s_vec
+{
+	int				*memory;
+	size_t			capacity;
+	size_t			len;
+}	t_vec;
+
+bool 		input_ps(int argc, char **argv);
 #endif

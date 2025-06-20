@@ -3,14 +3,15 @@
 
 int	main(int argc, char *argv[])
 {
-	t_stack	arr;
-	//check for argv null?
-	if(argc > 2)
+	if (input_ps(argc,  argv) == false)
 	{
-		if (input_ps(&arr, argc,  argv))
-			//false on error
+		write(2, "Error!", 6);
 	}
-	free_arrays(&arr);
+	else
+	{
+		write(1, "OK", 2);
+	}
+
 	return (0);
 }
 

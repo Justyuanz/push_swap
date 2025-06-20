@@ -13,10 +13,6 @@ VEC_A = $(VEC_DIR)/c_vec.a
 SRCS = $(addprefix $(SRCDIR)/,\
 	main.c \
 	input_parsing/input_parsing.c \
-	input_parsing/split_argv.c \
-	input_parsing/utils.c \
-	utils\malloc_free.c \
-
 )
 
 OBJS = $(SRCS:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
@@ -32,8 +28,7 @@ $(VEC_A):
 
 # === Build Executable ===
 $(NAME): $(OBJS) $(VEC_A)
-		cp $(VEC_A) $(NAME)
-		$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+		$(CC) $(CFLAGS) $(OBJS) $(VEC_A) -o $(NAME)
 
 # === Compile Rule for .c to .o ===
 #silently make the directory that contains that output file

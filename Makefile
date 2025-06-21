@@ -8,6 +8,8 @@ SRCDIR = src
 OBJDIR = obj
 VEC_DIR = c_vec
 VEC_A = $(VEC_DIR)/c_vec.a
+LIBFT_DIR = libft
+LIBFT_A = $(LIBFT_DIR)/libft.a
 
 # === Source Files ===
 SRCS = $(addprefix $(SRCDIR)/,\
@@ -24,11 +26,13 @@ all: $(NAME)
 
 # === Build Vec Archive ===
 $(VEC_A):
-	make -C $(VEC_DIR)
+	make -s -C $(VEC_DIR)
 
+$(LIBFT_A):
+	make -s -C $(LIBFT_DIR)
 # === Build Executable ===
-$(NAME): $(OBJS) $(VEC_A)
-		$(CC) $(CFLAGS) $(OBJS) $(VEC_A) -o $(NAME)
+$(NAME): $(OBJS) $(VEC_A) $(LIBFT_A)
+		$(CC) $(CFLAGS) $(OBJS) $(VEC_A) $(LIBFT_A) -o $(NAME)
 
 # === Compile Rule for .c to .o ===
 #silently make the directory that contains that output file
@@ -39,11 +43,13 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c
 # === Clean rule ===
 clean:
 		rm -rf $(OBJDIR)
-		make clean -C $(VEC_DIR)
+		make clean -s -C $(VEC_DIR)
+		make clean -s -C $(LIBFT_DIR)
 
 fclean: clean
 		rm -rf $(NAME)
-		make fclean -C $(VEC_DIR)
+		make fclean -s -C $(VEC_DIR)
+		make fclean -s -C $(LIBFT_DIR)
 
 re: fclean all
 

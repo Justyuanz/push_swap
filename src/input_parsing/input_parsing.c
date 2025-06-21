@@ -26,24 +26,29 @@ static bool num_only(char **argv)
 		j = -1;
 		while(argv[i][++j])
 		{
-			if(argv[i][j] > '9' || argv[i][j] < '0')
+			if((argv[i][j] > '9' || argv[i][j] < '0') && argv[i][j] != '-')
 				return (false);
 		}
 	}
 	return (true);
 }
-static bool	check_duplicate(char **argv)
+static bool	check_duplicate(int argc, char **argv)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	while(argv[++i])
+	j = 0;
+	while(i < argc)
 	{
-		if (i > 1)
+		j = i + 1;
+		while(j < argc)
 		{
-			if (ft_strcmp(argv[i], argv[i - 1]) == false)
+			if (ft_strcmp(argv[i], argv[j]) == false)
 				return (false);
+			j++;
 		}
+		i++;
 	}
 	return (true);
 }
@@ -54,8 +59,11 @@ bool input_ps(int argc, char **argv)
 	{
 		if (num_only(argv))
 		{
-			if (check_duplicate(argv))
-				return (true);
+			if (check_duplicate(argc, argv))
+			{
+				ft_atoi(argv[])
+				//store argv into the vec
+			}
 			else
 				return (false);
 		}

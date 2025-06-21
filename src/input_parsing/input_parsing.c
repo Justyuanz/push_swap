@@ -61,7 +61,7 @@ bool input_ps(int argc, char **argv)
 		{
 			if (check_duplicate(argc, argv))
 			{
-				ft_atoi(argv[])
+				//ft_atoi(argv[])
 				//store argv into the vec
 			}
 			else

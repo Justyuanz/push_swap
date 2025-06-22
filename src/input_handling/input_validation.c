@@ -86,7 +86,7 @@ static bool	check_duplicate(int argc, char **argv)
 	return (true);
 }
 
-bool input_ps(int argc, char **argv)
+bool input_valid(int argc, char **argv)
 {
 	if (argc>=2)
 	{

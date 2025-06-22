@@ -1,6 +1,6 @@
 #include "vec.h"
 
-void *ft_intmemmove(int *dst, const int *src, size_t n)
+int *ft_intmemmove(int *dst, const int *src, size_t n)
 {
 	size_t	i;
 	int	*dest;

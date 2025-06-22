@@ -22,9 +22,9 @@ int 	vec_insert(t_vec *dst, int *element, size_t index);
 int 	vec_remove(t_vec *src, size_t index);
 int 	vec_append(t_vec *dst, t_vec *src);
 int 	vec_prepend(t_vec *dst, t_vec *src);
-void 	*vec_get(t_vec *src, size_t index);
-void	*ft_intmemcpy(int * dst, const int * src, size_t n);
-void	*ft_intmemmove(int *dst, const int *src, size_t n);
+int 	*vec_get(t_vec *src, size_t index);
+int	*ft_intmemcpy(int * dst, const int * src, size_t n);
+int	*ft_intmemmove(int *dst, const int *src, size_t n);
 void	vec_free(t_vec *src);
 
 #endif

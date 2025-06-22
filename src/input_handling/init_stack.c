@@ -1,5 +1,5 @@
 #include "push_swap.h"
-bool	vec_init(t_vec *stack_a, t_vec *stack_b)
+bool	stack_init(t_vec *stack_a, t_vec *stack_b)
 {
 	if (vec_new(stack_a, 2) == -1)
 		return (false);

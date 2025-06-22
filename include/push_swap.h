@@ -8,7 +8,10 @@
 #include "../c_vec/include/vec.h"
 #include "../libft/libft.h"
 
-bool 		input_ps(int argc, char **argv);
+bool 		input_valid(int argc, char **argv);
 bool		arg_to_vec(t_vec *stack_a, char **argv);
-bool		vec_init(t_vec *stack_a, t_vec *stack_b);
+bool		stack_init(t_vec *stack_a, t_vec *stack_b);
+void		ft_sa(t_vec *stack_a);
+void		ft_sb(t_vec *stack_b);
+void		ft_ss(t_vec *stack_a, t_vec *stack_b);
 #endif

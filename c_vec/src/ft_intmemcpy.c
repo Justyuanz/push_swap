@@ -1,6 +1,6 @@
 #include "vec.h"
 
-void	*ft_intmemcpy(int *dst, const int *src, size_t n)
+int	*ft_intmemcpy(int *dst, const int *src, size_t n)
 {
 	size_t	i;
 	int	*dest;

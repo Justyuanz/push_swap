@@ -23,6 +23,8 @@ static bool num_only(char **argv)
 
 	while(argv[++i])
 	{
+		if (argv[i][0] == '\0')
+			return (false);
 		j = -1;
 		while(argv[i][++j])
 		{
@@ -58,15 +60,8 @@ bool input_ps(int argc, char **argv)
 	if (argc>=2)
 	{
 		if (num_only(argv))
-		{
 			if (check_duplicate(argc, argv))
-			{
-				//ft_atoi(argv[])
-				//store argv into the vec
-			}
-			else
-				return (false);
-		}
+				return (true);
 	}
 	return (false);
 }

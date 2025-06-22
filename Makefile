@@ -14,7 +14,8 @@ LIBFT_A = $(LIBFT_DIR)/libft.a
 # === Source Files ===
 SRCS = $(addprefix $(SRCDIR)/,\
 	main.c \
-	input_parsing/input_parsing.c \
+	input_parsing.c \
+	handle_vec.c  \
 )
 
 OBJS = $(SRCS:$(SRCDIR)/%.c=$(OBJDIR)/%.o)

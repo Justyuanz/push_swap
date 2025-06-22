@@ -3,13 +3,12 @@
 
 #include <stdbool.h>
 #include <stdlib.h>
-
-typedef struct s_vec
-{
-	int				*memory;
-	size_t			capacity;
-	size_t			len;
-}	t_vec;
+#include <unistd.h>
+#include <stdio.h> // DELETE ME
+#include "../c_vec/include/vec.h"
+#include "../libft/libft.h"
 
 bool 		input_ps(int argc, char **argv);
+bool		arg_to_vec(t_vec *stack_a, char **argv);
+bool		vec_init(t_vec *stack_a, t_vec *stack_b);
 #endif

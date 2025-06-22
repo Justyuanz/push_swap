@@ -17,6 +17,7 @@ SRCS = $(addprefix $(SRCDIR)/,\
 	input_handling/input_validation.c \
 	input_handling/init_stack.c  \
 	operations/swap.c \
+	operations/push.c \
 )
 
 OBJS = $(SRCS:$(SRCDIR)/%.c=$(OBJDIR)/%.o)

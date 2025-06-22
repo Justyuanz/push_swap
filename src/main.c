@@ -17,10 +17,16 @@ int	main(int argc, char *argv[])
 		printf("%d ", stack_a.memory[i]);
 	}
 	ft_sa(&stack_a);
+	ft_pa(&stack_b, &stack_a);
 	printf("\n");
 	for (size_t i = 0; i < stack_a.len; i++)
 	{
 		printf("%d ", stack_a.memory[i]);
+	}
+		printf("\n");
+	for (size_t i = 0; i < stack_b.len; i++)
+	{
+		printf("%d ", stack_b.memory[i]);
 	}
 	vec_free(&stack_a);
 	vec_free(&stack_b);

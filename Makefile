@@ -14,7 +14,7 @@ LIBFT_A = $(LIBFT_DIR)/libft.a
 # === Source Files ===
 SRCS = $(addprefix $(SRCDIR)/,\
 	main.c \
-	input_parsing.c \
+	input_validation.c \
 	handle_vec.c  \
 )
 

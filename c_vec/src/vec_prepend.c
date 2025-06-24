@@ -9,7 +9,7 @@ int vec_prepend(t_vec *dst, t_vec *src)
 	if (dst->capacity <= (dst->len + src->len))
 	{
 		if ((dst->len + src->len) < dst->len * 2)
-		{	
+		{
 			if (vec_resize(dst, dst->len * 2) == -1)
 				return (-1);
 		}

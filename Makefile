@@ -18,6 +18,8 @@ SRCS = $(addprefix $(SRCDIR)/,\
 	input_handling/init_stack.c  \
 	operations/swap.c \
 	operations/push.c \
+	operations/rotate.c \
+	operations/reverse_rotate.c \
 )
 
 OBJS = $(SRCS:$(SRCDIR)/%.c=$(OBJDIR)/%.o)

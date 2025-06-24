@@ -17,4 +17,10 @@ void		ft_sb(t_vec *stack_b);
 void		ft_ss(t_vec *stack_a, t_vec *stack_b);
 void		ft_pa(t_vec *stack_b, t_vec *stack_a);
 void		ft_pb(t_vec *stack_a, t_vec *stack_b);
+void		ft_ra(t_vec *stack_a);
+void		ft_rb(t_vec *stack_b);
+void		ft_rr(t_vec *stack_a, t_vec *stack_b);
+void		ft_rra(t_vec *stack_a);
+void		ft_rrb(t_vec *stack_b);
+void		ft_rrr(t_vec *stack_a, t_vec *stack_b);
 #endif

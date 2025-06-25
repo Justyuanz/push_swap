@@ -9,7 +9,7 @@
 #include "../libft/libft.h"
 
 bool 		input_valid(int argc, char **argv);
-bool		arg_to_vec(t_vec *stack_a, char **argv);
+bool		arg_to_vec(t_vec *stack_a, char **argv, int argc);
 bool		stack_init(t_vec *stack_a, t_vec *stack_b);
 
 void		ft_sa(t_vec *stack_a);

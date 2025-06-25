@@ -7,22 +7,18 @@ bool	stack_init(t_vec *stack_a, t_vec *stack_b)
 		return (false);
 	return (true);
 }
-bool	arg_to_vec(t_vec *stack_a, char **argv)
+bool	arg_to_vec(t_vec *stack_a, char **argv, int argc)
 {
 	int	i;
 	int	ret;
 
 	i = 1;
-	while (argv[i])
+	while (argc - 1 > 0)
 	{
-		 //need to check for overflow
-		ret = ft_atoi(argv[i]);
-		if (ret)
-		{
-			if (vec_push(stack_a, &ret) == -1)
-				return (false);
-		}
-		i++;
+		ret = ft_atoi(argv[argc -1]);
+		if (vec_push(stack_a, &ret) == -1)
+			return (false);
+		argc--;
 	}
 	return (true);
 }

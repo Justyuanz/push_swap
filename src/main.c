@@ -12,6 +12,11 @@ int	main(int argc, char *argv[])
 		if(!arg_to_vec(&stack_a, argv, argc))
 			destroy_and_exit(&stack_a, &stack_b);
 		sorting_algo(&stack_a, &stack_b, argc);
+		for (size_t i = 0; i < stack_a.len; i++)
+		{
+			printf("%d ", stack_a.memory[i]);
+		}
+		printf("\n");
 	}
 	//test_op(&stack_a, &stack_b);
 	vec_free(&stack_a);

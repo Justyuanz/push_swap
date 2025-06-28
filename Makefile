@@ -21,6 +21,7 @@ SRCS = $(addprefix $(SRCDIR)/,\
 	operations/rotate.c \
 	operations/reverse_rotate.c \
 	sorting/sortsmall.c \
+	sorting/sortutils.c \
 )
 
 OBJS = $(SRCS:$(SRCDIR)/%.c=$(OBJDIR)/%.o)

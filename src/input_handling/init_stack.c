@@ -43,19 +43,17 @@ bool	arg_to_vec(t_vec *stack_a, char **argv, int argc)
 	int	i;
 	int	ret;
 	int error;
-	int	j;
 
 	i = 1;
-	j = argc;
 	error = 0;
-	while (j - 1 > 0)
+	while (argv[i])
 	{
-		ret = ft_atoi(argv[j -1], &error);
+		ret = ft_atoi(argv[i], &error);
 		if (error == -1)
 			return(false);
 		if (vec_push(stack_a, &ret) == -1)
 			return (false);
-		j--;
+		i++;
 	}
 	if(check_duplicate(stack_a, argc) == false)
 		return (false);

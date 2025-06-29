@@ -2,38 +2,34 @@
 
 bool check_sorted(t_vec *stack_a)
 {
-	size_t	i;
-	size_t	count;
 	size_t	j;
 
-	i = stack_a->len;
-	count = 0;
 	j = 0;
-	while (j < i)
+	while (j < stack_a->len)
 	{
-		if(stack_a->memory[j] < stack_a->memory[j + 1])
-			count++;
+		if(stack_a->memory[j] > stack_a->memory[j + 1])
+			break;
 		j++;
 	}
-	if (count == j)
+	if(j == stack_a->len - 1)
 		return(true);
 	return (false);
 }
 
-int find_max(t_vec *stack_a)
+int find_min(t_vec *stack_a)
 {
-	int		max;
+	int		min;
 	int		j;
 	size_t	i;
 
 	i = 0;
 	j = 0;
-	max = stack_a->memory[0];
+	min = stack_a->memory[0];
 	while (i < stack_a->len)
 	{
-		if (stack_a->memory[i] > max)
+		if (stack_a->memory[i] < min)
 		{
-			max = stack_a->memory[i];
+			min = stack_a->memory[i];
 			j = i;
 		}
 		i++;

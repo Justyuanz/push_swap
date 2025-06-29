@@ -26,6 +26,6 @@ void		ft_rrr(t_vec *stack_a, t_vec *stack_b);
 
 bool 		sorting_algo(t_vec *stack_a, t_vec *stack_b, int argc);
 bool 		check_sorted(t_vec *stack_a);
-int 		find_max(t_vec *stack_a);
+int 		find_min(t_vec *stack_a);
 void		destroy_and_exit(t_vec *stack_a, t_vec *stack_b);
 #endif

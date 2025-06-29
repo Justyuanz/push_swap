@@ -9,8 +9,8 @@ static void ft_swap(t_vec *stack)
 	if (!stack || !stack->memory || stack->len == 0 || stack->len == 1)
 		return;
 
-	a = vec_get(stack, (stack->len - 1));
-	b = vec_get(stack, (stack->len - 2));
+	a = vec_get(stack, 0);
+	b = vec_get(stack, 1);
 	tmp = *a;
 	*a = *b;
 	*b = tmp;

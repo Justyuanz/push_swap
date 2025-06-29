@@ -3,3 +3,6 @@ push_swap
 .vscode
 libft/*.o
 c_vec/c_vec.a
+push_swap_visualizer/
+checker/
+RANGer/

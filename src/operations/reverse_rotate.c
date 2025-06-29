@@ -5,9 +5,9 @@ static void	ft_reverse_rotate(t_vec *stack)
 	int tmp;
 	size_t	i;
 
-	i = stack->len -1;
 	if (!stack || !stack->memory || stack->len == 0 || stack->len == 1)
 		return;
+	i = stack->len -1;
 	tmp = stack->memory[stack->len - 1];
 	while(i)
 	{

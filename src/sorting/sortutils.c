@@ -27,20 +27,16 @@ int find_max(t_vec *stack_a)
 	size_t	i;
 
 	i = 0;
-	max = stack_a->memory[1];
-	while (i < stack_a->len - 1)
+	j = 0;
+	max = stack_a->memory[0];
+	while (i < stack_a->len)
 	{
-		if ((stack_a->memory[i] > stack_a->memory[i + 1]) && (stack_a->memory[i] >= max))
+		if (stack_a->memory[i] > max)
 		{
 			max = stack_a->memory[i];
 			j = i;
 		}
 		i++;
-	}
-	if (stack_a->memory[i] > stack_a->memory[0])
-	{
-			max = stack_a->memory[i];
-			j = i;
 	}
 	return (j);
 }

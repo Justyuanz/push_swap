@@ -33,14 +33,41 @@ static void sort_four(t_vec *stack_a, t_vec *stack_b)
 	i = find_max(stack_a);
 	if (i == 0)
 		ft_ra(stack_a);
-	if (i == 2)
-		ft_sa(stack_a);
 	if (i == 1)
 	{
-		ft_pb(stack_a, stack_b);
+		ft_ra(stack_a);
+		ft_ra(stack_a);
 	}
+	if (i == 2)
+		ft_sa(stack_a);
 	ft_pb(stack_a, stack_b);
 	sort_three(stack_a, stack_b);
+	ft_pa(stack_b,stack_a);
+}
+
+static void sort_five(t_vec *stack_a, t_vec *stack_b)
+{
+	int i;
+
+	if (!stack_a)
+		destroy_and_exit(stack_a, stack_b);
+	if (check_sorted(stack_a))
+		return;
+	i = find_max(stack_a);
+	if (i == 0)
+		ft_ra(stack_a);
+	if (i == 1)
+	{
+		ft_ra(stack_a);
+		ft_ra(stack_a);
+	}
+	if (i == 2)
+	{
+		ft_rra(stack_a);
+		ft_rra(stack_a);
+	}
+	ft_pb(stack_a, stack_b);
+	sort_four(stack_a, stack_b);
 	ft_pa(stack_b,stack_a);
 }
 
@@ -52,5 +79,7 @@ bool sorting_algo(t_vec *stack_a, t_vec *stack_b, int argc)
 		sort_three(stack_a, stack_b);
 	if (argc == 5)
 		sort_four(stack_a, stack_b);
+	if (argc == 6)
+		sort_five(stack_a, stack_b);
 	return (true);
 }

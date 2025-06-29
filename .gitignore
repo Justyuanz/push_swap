@@ -1,5 +1,5 @@
 obj/
 push_swap
 .vscode
- libft/*.o
- c_vec/c_vec.a 
+libft/*.o
+c_vec/c_vec.a

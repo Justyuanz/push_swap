@@ -87,5 +87,7 @@ bool sorting_algo(t_vec *stack_a, t_vec *stack_b, int argc)
 		sort_four(stack_a, stack_b);
 	if (argc == 6)
 		sort_five(stack_a, stack_b);
+	if (argc > 6)
+		radix_sort(stack_a, stack_b);
 	return (true);
 }

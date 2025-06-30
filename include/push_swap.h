@@ -11,6 +11,7 @@
 bool 		input_valid(int argc, char **argv);
 bool		arg_to_vec(t_vec *stack_a, char **argv, int argc);
 bool		stack_init(t_vec *stack_a, t_vec *stack_b);
+void		destroy_and_exit(t_vec *stack_a, t_vec *stack_b);
 
 void		ft_sa(t_vec *stack_a);
 void		ft_sb(t_vec *stack_b);
@@ -24,8 +25,11 @@ void		ft_rra(t_vec *stack_a);
 void		ft_rrb(t_vec *stack_b);
 void		ft_rrr(t_vec *stack_a, t_vec *stack_b);
 
+int 		find_min(t_vec *stack_a);
+int			find_max(t_vec  *stack_a);
+int			count_bits(int num);
 bool 		sorting_algo(t_vec *stack_a, t_vec *stack_b, int argc);
 bool 		check_sorted(t_vec *stack_a);
-int 		find_min(t_vec *stack_a);
-void		destroy_and_exit(t_vec *stack_a, t_vec *stack_b);
+void 		radix_sort(t_vec *stack_a, t_vec *stack_b);
+
 #endif

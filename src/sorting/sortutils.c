@@ -36,3 +36,32 @@ int find_min(t_vec *stack_a)
 	}
 	return (j);
 }
+
+int	count_bits(int num)
+{
+	int	i;
+
+	i = 0;
+	while (num)
+	{
+		num = num >> 1;
+		i++;
+	}
+	return (i);
+}
+
+int	find_max(t_vec  *stack_a)
+{
+	int	max;
+	size_t	j;
+
+	j = 0;
+	max = stack_a->memory[0];
+	while(j < stack_a->len)
+	{
+		if (stack_a->memory[j] > max)
+			max = stack_a->memory[j];
+		j++;
+	}
+	return (max);
+}

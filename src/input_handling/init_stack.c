@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_stack.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/02 22:15:28 by jinzhang          #+#    #+#             */
+/*   Updated: 2025/07/02 22:15:31 by jinzhang         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	destroy_and_exit(t_vec *stack_a, t_vec *stack_b)
@@ -24,10 +36,10 @@ static bool	check_duplicate(t_vec *stack_a, int argc)
 
 	i = 0;
 	j = 0;
-	while(i < argc - 2)
+	while (i < argc - 2)
 	{
 		j = i;
-		while(j < argc - 2)
+		while (j < argc - 2)
 		{
 			if (stack_a->memory[i] == stack_a->memory[j + 1])
 				return (false);
@@ -42,7 +54,7 @@ bool	arg_to_vec(t_vec *stack_a, char **argv, int argc)
 {
 	int	i;
 	int	ret;
-	int error;
+	int	error;
 
 	i = 1;
 	error = 0;
@@ -50,12 +62,12 @@ bool	arg_to_vec(t_vec *stack_a, char **argv, int argc)
 	{
 		ret = ft_atoi(argv[i], &error);
 		if (error == -1)
-			return(false);
+			return (false);
 		if (vec_push(stack_a, &ret) == -1)
 			return (false);
 		i++;
 	}
-	if(check_duplicate(stack_a, argc) == false)
+	if (check_duplicate(stack_a, argc) == false)
 		return (false);
 	return (true);
 }

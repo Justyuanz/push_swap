@@ -1,12 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   vec_resize.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/02 22:14:02 by jinzhang          #+#    #+#             */
+/*   Updated: 2025/07/02 22:14:08 by jinzhang         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "vec.h"
 
 int	vec_resize(t_vec *src, size_t target_len)
 {
 	t_vec	tmp;
 
-	if(!src)
+	if (!src)
 		return (-1);
-	if(!src->memory)
+	if (!src->memory)
 	{
 		return (vec_new(src, target_len));
 	}

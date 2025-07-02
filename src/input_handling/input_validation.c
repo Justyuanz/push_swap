@@ -1,19 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   input_validation.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/02 22:15:44 by jinzhang          #+#    #+#             */
+/*   Updated: 2025/07/02 22:15:45 by jinzhang         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static bool	check_sign(char *str)
 {
 	int	i;
-	int flag;
-
+	int	flag;
 
 	i = 1;
 	flag = 0;
 	if (str[0] == '-' || str[0] == '+')
 	{
 		flag = 1;
-		while(str[i])
+		while (str[i])
 		{
-			if((str[i] == '-' || str[i] == '+'))
+			if ((str[i] == '-' || str[i] == '+'))
 				flag++;
 			if (flag == 2)
 				return (false);
@@ -22,27 +33,26 @@ static bool	check_sign(char *str)
 	}
 	if (flag == 1 && ft_strlen(str) > 1)
 		return (true);
-	return(false);
+	return (false);
 }
 
-static bool num_only(char **argv)
+static bool	num_only(char **argv)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-
-	while(argv[++i])
+	while (argv[++i])
 	{
 		if (argv[i][0] == '\0')
 			return (false);
 		j = -1;
-		while(argv[i][++j])
+		while (argv[i][++j])
 		{
-			if((argv[i][j] > '9' || argv[i][j] < '0'))
+			if ((argv[i][j] > '9' || argv[i][j] < '0'))
 			{
 				if (check_sign(argv[i]) == true)
-					continue;
+					continue ;
 				else
 					return (false);
 			}
@@ -51,10 +61,10 @@ static bool num_only(char **argv)
 	return (true);
 }
 
-bool input_valid(int argc, char **argv)
+bool	input_valid(int argc, char **argv)
 {
-	if (argc>=2)
+	if (argc >= 2)
 		if (num_only(argv))
-				return (true);
+			return (true);
 	return (false);
 }

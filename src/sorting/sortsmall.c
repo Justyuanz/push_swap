@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sortsmall.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/02 22:18:29 by jinzhang          #+#    #+#             */
+/*   Updated: 2025/07/02 22:18:32 by jinzhang         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-static void sort_two(t_vec *stack_a, t_vec *stack_b)
+static void	sort_two(t_vec *stack_a, t_vec *stack_b)
 {
 	if (!stack_a)
 		destroy_and_exit(stack_a, stack_b);
@@ -8,13 +20,12 @@ static void sort_two(t_vec *stack_a, t_vec *stack_b)
 		ft_sa(stack_a);
 }
 
-static void sort_three(t_vec *stack_a, t_vec *stack_b)
+static void	sort_three(t_vec *stack_a, t_vec *stack_b)
 {
 	if (!stack_a)
 		destroy_and_exit(stack_a, stack_b);
 	if (check_sorted(stack_a))
-		return;
-
+		return ;
 	if (stack_a->memory[0] > stack_a->memory[1])
 		ft_sa(stack_a);
 	if (stack_a->memory[0] > stack_a->memory[2])
@@ -23,17 +34,16 @@ static void sort_three(t_vec *stack_a, t_vec *stack_b)
 		ft_rra(stack_a);
 	if (stack_a->memory[0] > stack_a->memory[1])
 		ft_sa(stack_a);
-
 }
 
-static void sort_four(t_vec *stack_a, t_vec *stack_b)
+static void	sort_four(t_vec *stack_a, t_vec *stack_b)
 {
-	int i;
+	int	i;
 
 	if (!stack_a)
 		destroy_and_exit(stack_a, stack_b);
 	if (check_sorted(stack_a))
-		return;
+		return ;
 	i = find_min(stack_a);
 	if (i == 1)
 		ft_ra(stack_a);
@@ -46,17 +56,17 @@ static void sort_four(t_vec *stack_a, t_vec *stack_b)
 		ft_rra(stack_a);
 	ft_pb(stack_a, stack_b);
 	sort_three(stack_a, stack_b);
-	ft_pa(stack_b,stack_a);
+	ft_pa(stack_b, stack_a);
 }
 
-static void sort_five(t_vec *stack_a, t_vec *stack_b)
+static void	sort_five(t_vec *stack_a, t_vec *stack_b)
 {
-	int i;
+	int	i;
 
 	if (!stack_a)
 		destroy_and_exit(stack_a, stack_b);
 	if (check_sorted(stack_a))
-		return;
+		return ;
 	i = find_min(stack_a);
 	if (i == 1)
 		ft_ra(stack_a);
@@ -74,10 +84,10 @@ static void sort_five(t_vec *stack_a, t_vec *stack_b)
 		ft_rra(stack_a);
 	ft_pb(stack_a, stack_b);
 	sort_four(stack_a, stack_b);
-	ft_pa(stack_b,stack_a);
+	ft_pa(stack_b, stack_a);
 }
 
-bool sorting_algo(t_vec *stack_a, t_vec *stack_b, int argc)
+bool	sorting_algo(t_vec *stack_a, t_vec *stack_b, int argc)
 {
 	if (argc == 3)
 		sort_two(stack_a, stack_b);

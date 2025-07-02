@@ -20,7 +20,7 @@ SRCS = $(addprefix $(SRCDIR)/,\
 	operations/push.c \
 	operations/rotate.c \
 	operations/reverse_rotate.c \
-	sorting/sortsmall.c \
+	sorting/sorting.c \
 	sorting/sortutils.c \
 	sorting/radix.c \
 )

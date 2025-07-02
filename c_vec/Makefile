@@ -12,16 +12,12 @@ SRCS = $(addprefix $(SRCDIR)/,\
 	ft_intmemcpy.c \
 	ft_intmemmove.c \
 	vec_free.c \
-	vec_from.c \
 	vec_new.c \
 	vec_copy.c \
 	vec_resize.c \
 	vec_push.c \
 	vec_pop_front.c \
 	vec_get.c \
-	vec_insert.c \
-	vec_remove.c \
-	vec_append.c \
 	vec_push_front.c \
 )
 OBJS = $(SRCS:$(SRCDIR)/%.c=$(OBJDIR)/%.o)

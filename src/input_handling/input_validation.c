@@ -6,7 +6,7 @@
 /*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 22:15:44 by jinzhang          #+#    #+#             */
-/*   Updated: 2025/07/02 22:15:45 by jinzhang         ###   ########.fr       */
+/*   Updated: 2025/07/03 01:20:53 by jinzhang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ static bool	check_sign(char *str)
 		while (str[i])
 		{
 			if ((str[i] == '-' || str[i] == '+'))
-				flag++;
-			if (flag == 2)
 				return (false);
 			i++;
 		}

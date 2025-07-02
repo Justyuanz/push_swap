@@ -6,7 +6,7 @@
 /*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 22:18:29 by jinzhang          #+#    #+#             */
-/*   Updated: 2025/07/02 22:18:32 by jinzhang         ###   ########.fr       */
+/*   Updated: 2025/07/03 01:48:37 by jinzhang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ static void	sort_five(t_vec *stack_a, t_vec *stack_b)
 	ft_pa(stack_b, stack_a);
 }
 
-bool	sorting_algo(t_vec *stack_a, t_vec *stack_b, int argc)
+void	sorting_algo(t_vec *stack_a, t_vec *stack_b, int argc)
 {
 	if (argc == 3)
 		sort_two(stack_a, stack_b);
@@ -98,6 +98,9 @@ bool	sorting_algo(t_vec *stack_a, t_vec *stack_b, int argc)
 	if (argc == 6)
 		sort_five(stack_a, stack_b);
 	if (argc > 6)
+	{
+		if (check_sorted(stack_a))
+			return ;
 		radix_sort(stack_a, stack_b);
-	return (true);
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 22:15:28 by jinzhang          #+#    #+#             */
-/*   Updated: 2025/07/02 22:15:31 by jinzhang         ###   ########.fr       */
+/*   Updated: 2025/07/03 01:41:30 by jinzhang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,17 @@ bool	stack_init(t_vec *stack_a, t_vec *stack_b)
 	return (true);
 }
 
-static bool	check_duplicate(t_vec *stack_a, int argc)
+static bool	check_duplicate(t_vec *stack_a)
 {
-	int	i;
-	int	j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	j = 0;
-	while (i < argc - 2)
+	while (i < stack_a->len)
 	{
 		j = i;
-		while (j < argc - 2)
+		while (j < stack_a->len - 1)
 		{
 			if (stack_a->memory[i] == stack_a->memory[j + 1])
 				return (false);
@@ -50,7 +50,7 @@ static bool	check_duplicate(t_vec *stack_a, int argc)
 	return (true);
 }
 
-bool	arg_to_vec(t_vec *stack_a, char **argv, int argc)
+bool	arg_to_vec(t_vec *stack_a, char **argv)
 {
 	int	i;
 	int	ret;
@@ -67,7 +67,7 @@ bool	arg_to_vec(t_vec *stack_a, char **argv, int argc)
 			return (false);
 		i++;
 	}
-	if (check_duplicate(stack_a, argc) == false)
+	if (!check_duplicate(stack_a))
 		return (false);
 	return (true);
 }

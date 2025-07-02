@@ -6,7 +6,7 @@
 /*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 22:18:13 by jinzhang          #+#    #+#             */
-/*   Updated: 2025/07/02 22:22:32 by jinzhang         ###   ########.fr       */
+/*   Updated: 2025/07/03 01:56:03 by jinzhang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ static void	sort_copy(int *copy, t_vec *stack_a)
 	{
 		swapped = 0;
 		j = -1;
-		while (++j < stack_a->len - 1)
+		while (++j < (ssize_t)stack_a->len - 1)
 		{
 			if (copy[j] > copy[j + 1])
 			{
-				swapped = 1;
 				tmp = copy[j];
 				copy[j] = copy[j + 1];
 				copy[j + 1] = tmp;
+				swapped = 1;
 			}
 		}
 		i++;

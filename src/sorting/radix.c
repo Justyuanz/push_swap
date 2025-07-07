@@ -6,7 +6,7 @@
 /*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 22:18:13 by jinzhang          #+#    #+#             */
-/*   Updated: 2025/07/03 01:56:03 by jinzhang         ###   ########.fr       */
+/*   Updated: 2025/07/07 21:19:42 by jinzhang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	sort_copy(int *copy, t_vec *stack_a)
 	{
 		swapped = 0;
 		j = -1;
-		while (++j < (ssize_t)stack_a->len - 1)
+		while (++j < stack_a->len - 1)
 		{
 			if (copy[j] > copy[j + 1])
 			{
@@ -41,7 +41,7 @@ static void	sort_copy(int *copy, t_vec *stack_a)
 	}
 }
 
-static void	index_mapping(t_vec *stack_a)
+static void	index_mapping(t_vec *stack_a, t_vec *stack_b)
 {
 	size_t	i;
 	size_t	j;
@@ -49,7 +49,7 @@ static void	index_mapping(t_vec *stack_a)
 
 	copy = malloc(stack_a->len * sizeof(int));
 	if (!copy)
-		return ;
+		destroy_and_exit(stack_a, stack_b);
 	sort_copy(copy, stack_a);
 	i = 0;
 	while (i < stack_a->len)
@@ -78,7 +78,7 @@ void	radix_sort(t_vec *stack_a, t_vec *stack_b)
 
 	i = 0;
 	len_a = stack_a->len;
-	index_mapping(stack_a);
+	index_mapping(stack_a, stack_b);
 	bits = count_bits(find_max(stack_a));
 	while (i < bits)
 	{

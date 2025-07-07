@@ -6,7 +6,7 @@
 /*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 22:10:46 by jinzhang          #+#    #+#             */
-/*   Updated: 2025/07/02 22:10:53 by jinzhang         ###   ########.fr       */
+/*   Updated: 2025/07/07 19:43:50 by jinzhang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ int	vec_push_front(t_vec *dst, int *element)
 {
 	if (!dst || !element)
 		return (-1);
-	if (!dst->memory)
-		vec_new(dst, 1);
 	if (dst->capacity <= (dst->len + 1))
 	{
 		if (vec_resize(dst, dst->len + 1) == -1)

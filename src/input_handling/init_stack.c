@@ -6,7 +6,7 @@
 /*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 22:15:28 by jinzhang          #+#    #+#             */
-/*   Updated: 2025/07/03 01:41:30 by jinzhang         ###   ########.fr       */
+/*   Updated: 2025/07/07 21:19:06 by jinzhang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,12 @@ void	destroy_and_exit(t_vec *stack_a, t_vec *stack_b)
 bool	stack_init(t_vec *stack_a, t_vec *stack_b)
 {
 	if (vec_new(stack_a, 2) == -1)
-		return (false);
+		exit (1);
 	if (vec_new(stack_b, 2) == -1)
-		return (false);
+	{
+		vec_free(stack_a);
+		exit (1);
+	}
 	return (true);
 }
 

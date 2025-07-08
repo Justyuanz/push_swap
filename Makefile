@@ -1,3 +1,6 @@
+# === Colors ===
+GREEN			=	\033[0;92m
+
 # === Configuration ===
 NAME = push_swap
 CC = cc
@@ -40,13 +43,14 @@ $(LIBFT_A):
 	make -s -C $(LIBFT_DIR)
 # === Build Executable ===
 $(NAME): $(OBJS) $(VEC_A) $(LIBFT_A)
-		$(CC) $(CFLAGS) $(OBJS) $(VEC_A) $(LIBFT_A) -o $(NAME)
+		@$(CC) $(CFLAGS) $(OBJS) $(VEC_A) $(LIBFT_A) -o $(NAME)
+		@echo "$(GREEN) Compiled!$(DEF_COLOR)"
 
 # === Compile Rule for .c to .o ===
 #silently make the directory that contains that output file
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 			mkdir -p $(@D)
-			$(CC) $(CFLAGS) $(DFLAGS) -c $< -o $@
+			@$(CC) $(CFLAGS) $(DFLAGS) -c $< -o $@
 
 # === Clean rule ===
 clean:

@@ -6,14 +6,14 @@
 /*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 22:19:23 by jinzhang          #+#    #+#             */
-/*   Updated: 2025/07/07 21:18:33 by jinzhang         ###   ########.fr       */
+/*   Updated: 2025/07/03 01:50:47 by jinzhang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "vec.h"
+# include "../c_vec/include/vec.h"
 # include "../libft/libft.h"
 # include <stdbool.h>
 # include <stdlib.h>

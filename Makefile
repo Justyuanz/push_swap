@@ -2,7 +2,7 @@
 NAME = push_swap
 CC = cc
 CFLAGS = -g -Wall -Wextra -Werror
-DFLAGS = -MMD -MP -I include -I c_vec/include
+DFLAGS = -MMD -MP -I include
 
 SRCDIR = src
 OBJDIR = obj
